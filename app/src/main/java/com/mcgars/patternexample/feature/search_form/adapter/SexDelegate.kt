@@ -13,7 +13,7 @@ import com.mcgars.patternexample.search.SearchSex
 import kotlinx.android.synthetic.main.item_search_age.view.*
 
 
-class AgeDelegate : AbsListItemAdapterDelegate<SearchSex, Search, RecyclerView.ViewHolder>() {
+class SexDelegate : AbsListItemAdapterDelegate<SearchSex, Search, RecyclerView.ViewHolder>() {
 
     override fun isForViewType(item: Search, items: MutableList<Search>, position: Int): Boolean {
         return item is SearchSex
@@ -29,7 +29,7 @@ class AgeDelegate : AbsListItemAdapterDelegate<SearchSex, Search, RecyclerView.V
     override fun onBindViewHolder(item: SearchSex, viewHolder: RecyclerView.ViewHolder, payloads: MutableList<Any>) {
         with(viewHolder.itemView) {
             item_search_age_text_view_title.text = item.getTitle()
-            item_search_age_text_view_value.text = item.toString()
+            item_search_age_text_view_value.text = item.sex.takeIf { it.isNotEmpty() } ?: context.getString(R.string.tap_to_select)
             setOnClickListener { showDialogForSetAge(context, item_search_age_text_view_value, item) }
         }
     }

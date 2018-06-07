@@ -5,4 +5,5 @@
     <string name="change">Изменить</string>
     <string name="sex">Пол: %s</string>
     <string name="name">Ключевые слова: %s</string>
+    <string name="tap_to_select">Нажмите для выбора</string>
 </resources>

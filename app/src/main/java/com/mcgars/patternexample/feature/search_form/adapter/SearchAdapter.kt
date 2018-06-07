@@ -10,7 +10,7 @@ class SearchAdapter(
     init {
         delegatesManager
                 .addDelegate(NameDelegate())
-                .addDelegate(AgeDelegate())
+                .addDelegate(SexDelegate())
 
         setItems(searchItems)
     }
