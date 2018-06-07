@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">PatternExample</string>
+    <string name="search">Поиск</string>
+    <string name="keywords">Ключевые слова</string>
+    <string name="change">Изменить</string>
+    <string name="sex">Пол: %s</string>
+    <string name="name">Ключевые слова: %s</string>
+</resources>

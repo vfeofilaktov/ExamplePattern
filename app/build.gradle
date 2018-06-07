@@ -1,0 +1,32 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion 25
+    defaultConfig {
+        applicationId "com.mcgars.patternexample"
+        minSdkVersion 14
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation ("org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version") {
+        exclude group: "com.android.support"
+    }
+    implementation "com.android.support:design:25.1.0"
+    implementation 'com.android.support.constraint:constraint-layout:1.1.0'
+    implementation 'com.hannesdorfmann:adapterdelegates3:3.0.1'
+    implementation "com.google.code.gson:gson:2.8.2"
+}
