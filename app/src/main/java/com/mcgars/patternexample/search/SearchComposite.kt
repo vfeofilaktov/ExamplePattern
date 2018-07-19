@@ -4,7 +4,7 @@ import android.content.Context
 import android.net.Uri
 
 
-class SearchContainer(
+class SearchComposite(
         vararg searchItems: Search
 ) : Search {
 
@@ -14,8 +14,8 @@ class SearchContainer(
         }
     }
 
-    override fun addToUrl(uri: Uri.Builder) {
-        items.forEach { it.value.addToUrl(uri) }
+    override fun append(uri: Uri.Builder) {
+        items.forEach { it.value.append(uri) }
     }
 
     override fun getTitle(): String = "Поиск"

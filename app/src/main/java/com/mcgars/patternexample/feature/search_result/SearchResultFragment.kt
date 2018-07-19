@@ -7,14 +7,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.mcgars.patternexample.R
-import com.mcgars.patternexample.search.SearchContainer
+import com.mcgars.patternexample.search.SearchComposite
 import kotlinx.android.synthetic.main.fragment_search_result.view.*
 
 
 class SearchResultFragment : Fragment() {
 
     companion object {
-        fun newInstance(params: SearchContainer): SearchResultFragment {
+        fun newInstance(params: SearchComposite): SearchResultFragment {
             return SearchResultFragment().apply {
                 arguments = Bundle().apply {
                     putSerializable("filter", params)
@@ -36,11 +36,11 @@ class SearchResultFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        val filter = arguments.getSerializable("filter") as SearchContainer
+        val filter = arguments.getSerializable("filter") as SearchComposite
 
         val uriBuilder = Uri.Builder().scheme("http").path("test.com")
         // дополняем к ссылке параметры
-        filter.addToUrl(uriBuilder)
+        filter.append(uriBuilder)
         // выводим получившуюся ссылку в TextView
         view?.fragment_search_form_text_view_result?.text = uriBuilder.build().toString()
         // для пользователя информация поиска в простой форме

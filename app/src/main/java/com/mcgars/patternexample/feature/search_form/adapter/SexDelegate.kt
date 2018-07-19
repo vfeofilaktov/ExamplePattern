@@ -37,10 +37,10 @@ class SexDelegate : AbsListItemAdapterDelegate<SearchSex, Search, RecyclerView.V
     private fun showDialogForSetAge(context: Context, textView: TextView, item: SearchSex) {
         val items = arrayOf("male", "female")
         AlertDialog.Builder(context)
-                .setItems(items, {_, which ->
+                .setItems(items) { _, which ->
                     item.sex = items[which]
                     textView.text = item.sex
-                })
+                }
                 .show()
     }
 }

@@ -9,7 +9,7 @@ class SearchName(
         var name: String = ""
 ) : Search {
 
-    override fun addToUrl(uri: Uri.Builder) {
+    override fun append(uri: Uri.Builder) {
         if (name.isNotBlank()) {
             uri.appendQueryParameter("name", name)
         }

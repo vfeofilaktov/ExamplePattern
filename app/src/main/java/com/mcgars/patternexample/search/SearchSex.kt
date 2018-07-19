@@ -9,7 +9,7 @@ class SearchSex(
         var sex: String = ""
 ) : Search {
 
-    override fun addToUrl(uri: Uri.Builder) {
+    override fun append(uri: Uri.Builder) {
         if (sex.isNotEmpty()) {
             uri.appendQueryParameter("sex", sex)
         }

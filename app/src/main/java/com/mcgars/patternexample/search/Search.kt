@@ -7,7 +7,7 @@ import java.net.URI
 
 
 interface Search : Serializable{
-    fun addToUrl(uri: Uri.Builder)
+    fun append(uri: Uri.Builder)
     fun getTitle(): String
     fun toString(context: Context): String
 }

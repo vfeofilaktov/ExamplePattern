@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.mcgars.patternexample.feature.search_form.SearchFormFragment
 import com.mcgars.patternexample.feature.search_result.SearchResultFragment
-import com.mcgars.patternexample.search.SearchContainer
+import com.mcgars.patternexample.search.SearchComposite
 
 class MainActivity : AppCompatActivity() {
 
@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
                 .commitAllowingStateLoss()
     }
 
-    fun loadSearchResultPage(params: SearchContainer) {
+    fun loadSearchResultPage(params: SearchComposite) {
         supportFragmentManager.beginTransaction()
                 .add(R.id.activity_main_container_root, SearchResultFragment.newInstance(params))
                 .addToBackStack(null)

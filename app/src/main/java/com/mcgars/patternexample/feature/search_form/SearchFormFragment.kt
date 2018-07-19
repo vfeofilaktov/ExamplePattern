@@ -9,7 +9,7 @@ import com.mcgars.patternexample.MainActivity
 import com.mcgars.patternexample.R
 import com.mcgars.patternexample.feature.search_form.adapter.SearchAdapter
 import com.mcgars.patternexample.search.SearchSex
-import com.mcgars.patternexample.search.SearchContainer
+import com.mcgars.patternexample.search.SearchComposite
 import com.mcgars.patternexample.search.SearchName
 import com.mcgars.patternexample.tool.hideKeyboard
 import kotlinx.android.synthetic.main.fragment_search_form.view.*
@@ -17,7 +17,7 @@ import kotlinx.android.synthetic.main.fragment_search_form.view.*
 
 class SearchFormFragment : Fragment() {
 
-    private val itemsContainer = SearchContainer(
+    private val itemsContainer = SearchComposite(
             SearchName(),
             SearchSex()
     )
